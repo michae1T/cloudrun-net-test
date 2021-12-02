@@ -1,0 +1,4 @@
+echo "starting net-test on $PORT for $URL"
+
+ncat -lk -p $PORT --sh-exec "echo 'HTTP/1.1 200 OK'; echo "" ; /bin/sh -c ./make-request > /dev/stderr ; echo "" > /dev/stderr ; echo 'done!'"
+

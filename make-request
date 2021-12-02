@@ -1,0 +1,4 @@
+[ -n "$TOKEN" ] || TOKEN="`gcloud auth print-identity-token --audiences=$URL`"
+
+curl "$URL" -H "Authorization: Bearer $TOKEN" -w "@curl-format.txt"
+
